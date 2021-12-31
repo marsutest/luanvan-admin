@@ -6,7 +6,7 @@ import AddNewPromotion from "./AddNewPromotion";
 export default function Promotion() {
   const [promos, setPromos] = useState([]);
   const getPromo = () => {
-    Axios.get("http://localhost:3001/admin/promotion/get-promotion").then(
+    Axios.get("https://luanvan-server.herokuapp.com/admin/promotion/get-promotion").then(
       (res) => {
         setPromos(res.data);
       }

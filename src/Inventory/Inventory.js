@@ -7,7 +7,7 @@ export default function Inventory() {
   const [receiptDetail, setReceiptDetail] = useState([]);
 
   const getReceipt = () => {
-    Axios.get("http://localhost:3001/admin/inventory/get-receipt").then(
+    Axios.get("https://luanvan-server.herokuapp.com/admin/inventory/get-receipt").then(
       (res) => {
         setReceipt(res.data);
       }
@@ -20,7 +20,7 @@ export default function Inventory() {
   };
 
   const getReceiptDetail = (receipt_id) => {
-    Axios.get("http://localhost:3001/admin/inventory/get-receipt-detail", {
+    Axios.get("https://luanvan-server.herokuapp.com/admin/inventory/get-receipt-detail", {
       params: {
         receipt_id: receipt_id,
       },

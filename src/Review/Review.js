@@ -11,7 +11,7 @@ export default function Review() {
   const [totalPage, setTotalPage] = useState(1);
 
   const getTotalPage = () => {
-    Axios.get("http://localhost:3001/admin/review/get-total-user-review", {
+    Axios.get("https://luanvan-server.herokuapp.com/admin/review/get-total-user-review", {
       page: page,
     }).then((res) => {
       setTotalPage(Math.ceil(res.data[0].total / 5));
@@ -19,7 +19,7 @@ export default function Review() {
   };
 
   const getReviews = () => {
-    Axios.post("http://localhost:3001/admin/review/get-user-review", {
+    Axios.post("https://luanvan-server.herokuapp.com/admin/review/get-user-review", {
       page: page,
     }).then((res) => {
       setReviews(res.data);
@@ -27,7 +27,7 @@ export default function Review() {
   };
 
   const deleleReview = (review_id) => {
-    Axios.post("http://localhost:3001/admin/review/delete-user-review", {
+    Axios.post("https://luanvan-server.herokuapp.com/admin/review/delete-user-review", {
       review_id: review_id,
     }).then((res) => {
       getReviews();

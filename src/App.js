@@ -37,7 +37,7 @@ function App() {
   );
   const onSubmitLogin = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:3001/admin/login", {
+    Axios.post("https://luanvan-server.herokuapp.com/admin/login", {
       username: userAccount.username,
       password: userAccount.password,
     }).then((res) => {

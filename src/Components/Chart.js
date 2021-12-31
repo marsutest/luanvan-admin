@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function GoogleChart() {
   const [chartDay, setChartDay] = useState([]);
   const getChartDay = () => {
-    Axios.get("http://localhost:3001/admin/dashboard/chart-day").then((res) => {
+    Axios.get("https://luanvan-server.herokuapp.com/admin/dashboard/chart-day").then((res) => {
       let chart = ["Thời gian"];
       let data = res.data;
       for (let i = 0; i < 24; i++) {

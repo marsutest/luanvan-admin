@@ -73,7 +73,7 @@ export default function AddNewProduct(props) {
       },
     };
     Axios.post(
-      "http://localhost:3001/admin/product/add-new-product",
+      "https://luanvan-server.herokuapp.com/admin/product/add-new-product",
       data,
       config
     ).then((res) => {
