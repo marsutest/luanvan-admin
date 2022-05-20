@@ -40,13 +40,13 @@ export default function AddNewStaff(props) {
   };
 
   const getCityList = () => {
-    Axios.get("https://luanvan-server.herokuapp.com/get-city").then((response) => {
+    Axios.get("https://luanvan-server-1.herokuapp.com/get-city").then((response) => {
       setCityList(response.data);
     });
   };
 
   const getDistrictList = (matp) => {
-    Axios.post("https://luanvan-server.herokuapp.com/get-district", { matp: matp }).then(
+    Axios.post("https://luanvan-server-1.herokuapp.com/get-district", { matp: matp }).then(
       (response) => {
         setDistrictList(response.data);
       }
@@ -54,7 +54,7 @@ export default function AddNewStaff(props) {
   };
 
   const getTownList = (maqh) => {
-    Axios.post("https://luanvan-server.herokuapp.com/get-town", { maqh: maqh }).then(
+    Axios.post("https://luanvan-server-1.herokuapp.com/get-town", { maqh: maqh }).then(
       (response) => {
         setTownList(response.data);
       }
@@ -63,7 +63,7 @@ export default function AddNewStaff(props) {
 
   const onAddNewStaff = (event) => {
     event.preventDefault();
-    Axios.post("https://luanvan-server.herokuapp.com/admin/staff/add-new-staff", {
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/staff/add-new-staff", {
       data: newStaffInfo,
     }).then((res) => {
       let alert = document.getElementById(`alert_newstaff`);

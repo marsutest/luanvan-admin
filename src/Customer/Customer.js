@@ -16,7 +16,7 @@ export default function Customer(props) {
   });
 
   const getTotalCustomers = () => {
-    Axios.post("https://luanvan-server.herokuapp.com/admin/customer/get-total-customer", {
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/customer/get-total-customer", {
       query: search,
     }).then((res) => {
       setTotalPage(Math.ceil(res.data[0].total / 5));
@@ -28,7 +28,7 @@ export default function Customer(props) {
       query: search,
       page: page,
     };
-    Axios.post("https://luanvan-server.herokuapp.com/admin/customer/get-customers", data).then(
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/customer/get-customers", data).then(
       (res) => {
         setCustomers(res.data);
       }
@@ -46,7 +46,7 @@ export default function Customer(props) {
       password: customerInfo.password,
     };
     Axios.post(
-      "https://luanvan-server.herokuapp.com/admin/customer/change-customer-password",
+      "https://luanvan-server-1.herokuapp.com/admin/customer/change-customer-password",
       data
     ).then((response) => {
       let alert = document.getElementById(`alert_${data.username}`);
@@ -61,7 +61,7 @@ export default function Customer(props) {
   };
 
   const getOrdersByCustomer = (user_id) => {
-    Axios.post("https://luanvan-server.herokuapp.com/admin/customer/get-orders-by-customer", {
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/customer/get-orders-by-customer", {
       user_id: user_id,
     }).then((response) => {
       setOrdersByCustomer(response.data);
@@ -69,7 +69,7 @@ export default function Customer(props) {
   };
 
   const deleteCustomer = (user_id) => {
-    Axios.post("https://luanvan-server.herokuapp.com/admin/customer/delete-customer", {
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/customer/delete-customer", {
       user_id: user_id,
     }).then((response) => {
       console.log(response.data.message);

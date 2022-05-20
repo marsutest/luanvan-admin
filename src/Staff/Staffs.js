@@ -10,7 +10,7 @@ export default function Staffs() {
   const [staffs, setStaffs] = useState([]);
 
   const getJobs = () => {
-    Axios.get("https://luanvan-server.herokuapp.com/admin/staff/get-jobs").then((response) => {
+    Axios.get("https://luanvan-server-1.herokuapp.com/admin/staff/get-jobs").then((response) => {
       setJobs(response.data);
     });
   };
@@ -20,7 +20,7 @@ export default function Staffs() {
       query: search,
       page: page,
     };
-    Axios.post("https://luanvan-server.herokuapp.com/admin/staff/get-staffs", data).then((res) => {
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/staff/get-staffs", data).then((res) => {
       setStaffs(res.data);
     });
   };

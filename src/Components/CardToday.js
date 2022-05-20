@@ -7,7 +7,7 @@ export default function CardToday() {
   const [totalPrice, setTotalPrice] = useState(0);
 
   const getTotalOrder = () => {
-    Axios.get("https://luanvan-server.herokuapp.com/admin/dashboard/get-total-order").then(
+    Axios.get("https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-order").then(
       (response) => {
         setTotalOrder(response.data[0].totalOrder);
       }
@@ -15,7 +15,7 @@ export default function CardToday() {
   };
 
   const getTotalCustomer = () => {
-    Axios.get("https://luanvan-server.herokuapp.com/admin/dashboard/get-total-customer").then(
+    Axios.get("https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-customer").then(
       (response) => {
         setTotalCustomer(response.data[0].totalCustomer);
       }
@@ -23,7 +23,7 @@ export default function CardToday() {
   };
 
   const getTotalPrice = () => {
-    Axios.get("https://luanvan-server.herokuapp.com/admin/dashboard/get-total-price").then(
+    Axios.get("https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-price").then(
       (response) => {
         setTotalPrice(response.data[0].totalPrice);
       }

@@ -26,7 +26,7 @@ export default function Order(props) {
       query: search.query,
       status_id: search.status_id,
     };
-    Axios.post("https://luanvan-server.herokuapp.com/admin/order/get-total-order", data).then(
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/order/get-total-order", data).then(
       (response) => {
         setTotalPage(Math.ceil(response.data[0].totalOrder / 4));
       }
@@ -39,7 +39,7 @@ export default function Order(props) {
       status_id: search.status_id,
       page: page,
     };
-    Axios.post("https://luanvan-server.herokuapp.com/admin/order/get-orders", data).then(
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/order/get-orders", data).then(
       (response) => {
         setOrders(response.data);
       }
@@ -57,7 +57,7 @@ export default function Order(props) {
       status_id: orderData.status_id,
     };
     Axios.post(
-      "https://luanvan-server.herokuapp.com/admin/order/change-order-status",
+      "https://luanvan-server-1.herokuapp.com/admin/order/change-order-status",
       data
     ).then((response) => {
       let alert = document.getElementById(`alert_${data.order_id}`);
@@ -79,7 +79,7 @@ export default function Order(props) {
       maqh: Number(order.maqh),
       xaid: Number(order.xaid),
     };
-    Axios.post("https://luanvan-server.herokuapp.com/admin/order/get-order-detail", data).then(
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/order/get-order-detail", data).then(
       (response) => {
         setOrderDetail(response.data);
       }

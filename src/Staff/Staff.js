@@ -12,7 +12,7 @@ export default function Staffs(props) {
   });
 
   const getTotalStaff = () => {
-    Axios.post("https://luanvan-server.herokuapp.com/admin/staff/get-total-staff", {
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/staff/get-total-staff", {
       query: search,
     }).then((res) => {
       setTotalPage(Math.ceil(res.data[0].total / 5));
@@ -35,7 +35,7 @@ export default function Staffs(props) {
 
   const changeJob = (user_id, job_id) => {
     const data = { user_id: user_id, job_id: job_id };
-    Axios.post("https://luanvan-server.herokuapp.com/admin/staff/change-job", data).then(
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/staff/change-job", data).then(
       (res) => {
         getStaffs();
       }
@@ -49,7 +49,7 @@ export default function Staffs(props) {
       password: staffInfo.password,
     };
     Axios.post(
-      "https://luanvan-server.herokuapp.com/admin/staff/change-staff-password",
+      "https://luanvan-server-1.herokuapp.com/admin/staff/change-staff-password",
       data
     ).then((response) => {
       let alert = document.getElementById(`alert_${data.user_id}`);
@@ -64,7 +64,7 @@ export default function Staffs(props) {
   };
 
   const deleteStaff = (user_id) => {
-    Axios.post("https://luanvan-server.herokuapp.com/admin/staff/delete-staff", {
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/staff/delete-staff", {
       user_id: user_id,
     }).then((response) => {
       console.log(response.data.message);

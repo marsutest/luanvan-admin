@@ -13,7 +13,7 @@ export default function AddNewMessage(props) {
       message: newMessage,
     };
     Axios.post(
-      "https://luanvan-server.herokuapp.com/admin/message/add-new-message",
+      "https://luanvan-server-1.herokuapp.com/admin/message/add-new-message",
       data
     ).then((res) => {
       getMessages();

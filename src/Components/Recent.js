@@ -8,7 +8,7 @@ export default function Recent() {
   const [recentOrderLimit, setRecentOrderLimit] = useState(5);
   const getBestSellingBooks = () => {
     Axios.get(
-      "https://luanvan-server.herokuapp.com/admin/dashboard/best-selling?limit=" +
+      "https://luanvan-server-1.herokuapp.com/admin/dashboard/best-selling?limit=" +
         bestSellingLimit
     ).then((response) => {
       setBestSellingBooks(response.data);
@@ -17,7 +17,7 @@ export default function Recent() {
   const [recentOrder, setRecentOrder] = useState([]);
   const getRecentOrder = () => {
     Axios.get(
-      "https://luanvan-server.herokuapp.com/admin/dashboard/recent-order?limit=" +
+      "https://luanvan-server-1.herokuapp.com/admin/dashboard/recent-order?limit=" +
         recentOrderLimit
     ).then((response) => {
       setRecentOrder(response.data);
