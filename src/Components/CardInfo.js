@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function CardInfo() {
   const [totalProduct, setTotalProduct] = useState(0);
   const getTotalProduct = () => {
-    Axios.get("https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-product").then(
+    Axios.get("https://luanvan-server.herokuapp.com/admin/dashboard/get-total-product").then(
       (response) => {
         setTotalProduct(response.data[0].totalProduct);
       }
@@ -13,7 +13,7 @@ export default function CardInfo() {
   const [totalNotConfirmBook, setTotalNotConfirmBook] = useState(0);
   const getTotalNotConfirmBook = () => {
     Axios.get(
-      "https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-notConfirmBook"
+      "https://luanvan-server.herokuapp.com/admin/dashboard/get-total-notConfirmBook"
     ).then((response) => {
       setTotalNotConfirmBook(response.data[0].totalNotConfirmBook);
     });
@@ -21,7 +21,7 @@ export default function CardInfo() {
 
   const [totalOrder, setTotalOrder] = useState(0);
   const getTotalOrder = () => {
-    Axios.get("https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-order").then(
+    Axios.get("https://luanvan-server.herokuapp.com/admin/dashboard/get-total-order").then(
       (response) => {
         setTotalOrder(response.data[0].totalOrder);
       }
@@ -31,7 +31,7 @@ export default function CardInfo() {
   const [totalSuccessOrder, setTotalSuccessOrder] = useState(0);
   const getTotalSuccessOrder = () => {
     Axios.get(
-      "https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-success-order"
+      "https://luanvan-server.herokuapp.com/admin/dashboard/get-total-success-order"
     ).then((response) => {
       setTotalSuccessOrder(response.data[0].totalSuccessOrder);
     });
@@ -40,7 +40,7 @@ export default function CardInfo() {
   const [totalCancelOrder, setTotalCancelOrder] = useState(0);
   const getTotalCancelOrder = () => {
     Axios.get(
-      "https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-cancel-order"
+      "https://luanvan-server.herokuapp.com/admin/dashboard/get-total-cancel-order"
     ).then((response) => {
       setTotalCancelOrder(response.data[0].totalCancelOrder);
     });
@@ -48,7 +48,7 @@ export default function CardInfo() {
 
   const [totalBook, setTotalBook] = useState(0);
   const getTotalBook = () => {
-    Axios.get("https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-book").then(
+    Axios.get("https://luanvan-server.herokuapp.com/admin/dashboard/get-total-book").then(
       (response) => {
         setTotalBook(response.data[0].totalBook);
       }
@@ -57,7 +57,7 @@ export default function CardInfo() {
 
   const [totalSoldBook, setTotalSoldBook] = useState(0);
   const getTotalSoldBook = () => {
-    Axios.get("https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-sold-book").then(
+    Axios.get("https://luanvan-server.herokuapp.com/admin/dashboard/get-total-sold-book").then(
       (response) => {
         setTotalSoldBook(response.data[0].totalSoldBook);
       }
@@ -67,7 +67,7 @@ export default function CardInfo() {
   const [totalOutOfStock, setTotalOutOfStock] = useState(0);
   const getTotalOutOfStock = () => {
     Axios.get(
-      "https://luanvan-server-1.herokuapp.com/admin/dashboard/get-total-out-of-book"
+      "https://luanvan-server.herokuapp.com/admin/dashboard/get-total-out-of-book"
     ).then((response) => {
       setTotalOutOfStock(response.data[0].totalOutOfStock);
     });

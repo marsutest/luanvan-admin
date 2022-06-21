@@ -12,7 +12,7 @@ export default function Product() {
     genre_id: "",
   });
   const getGenres = () => {
-    Axios.get("https://luanvan-server-1.herokuapp.com/admin/product/get-genres").then((res) => {
+    Axios.get("https://luanvan-server.herokuapp.com/admin/product/get-genres").then((res) => {
       setGenres(res.data);
     });
   };
@@ -24,7 +24,7 @@ export default function Product() {
       page: page,
       limit: 4,
     };
-    Axios.post("https://luanvan-server-1.herokuapp.com/admin/product/get-books", data).then((res) => {
+    Axios.post("https://luanvan-server.herokuapp.com/admin/product/get-books", data).then((res) => {
       setBooks(res.data);
     });
   };

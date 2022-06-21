@@ -26,7 +26,7 @@ export default function AddNewReceipt() {
         page: 1,
         limit: 5,
       };
-      Axios.post("https://luanvan-server-1.herokuapp.com/admin/product/get-books", data).then(
+      Axios.post("https://luanvan-server.herokuapp.com/admin/product/get-books", data).then(
         (res) => {
           setBooks(res.data);
         }
@@ -38,7 +38,7 @@ export default function AddNewReceipt() {
 
   const stockIn = (e) => {
     e.preventDefault();
-    Axios.post("https://luanvan-server-1.herokuapp.com/admin/inventory/stock-in", {
+    Axios.post("https://luanvan-server.herokuapp.com/admin/inventory/stock-in", {
       receiptInfo: receiptInfo,
       receipt: receipt,
     }).then((res) => {

@@ -10,7 +10,7 @@ export default function Orders() {
   });
 
   const getOrderStatus = () => {
-    Axios.get("https://luanvan-server-1.herokuapp.com/admin/order/get-order-status").then(
+    Axios.get("https://luanvan-server.herokuapp.com/admin/order/get-order-status").then(
       (response) => {
         setOrderStatus(response.data);
       }

@@ -59,7 +59,7 @@ export default function Books(props) {
       },
     };
     Axios.post(
-      "https://luanvan-server-1.herokuapp.com/admin/product/update-book-detail",
+      "https://luanvan-server.herokuapp.com/admin/product/update-book-detail",
       data,
       config
     ).then((res) => {
@@ -89,7 +89,7 @@ export default function Books(props) {
 
   const getTotalBooks = () => {
     const data = { query: search.query, genre_id: search.genre_id };
-    Axios.post("https://luanvan-server-1.herokuapp.com/admin/product/get-total-book", data).then(
+    Axios.post("https://luanvan-server.herokuapp.com/admin/product/get-total-book", data).then(
       (res) => {
         setTotalBook(res.data[0].totalBook);
         setTotalPage(Math.ceil(res.data[0].totalBook / 4));
@@ -98,7 +98,7 @@ export default function Books(props) {
   };
 
   const deleteBook = (book_id) => {
-    Axios.post("https://luanvan-server-1.herokuapp.com/admin/product/delete-book", {
+    Axios.post("https://luanvan-server.herokuapp.com/admin/product/delete-book", {
       book_id: book_id,
     }).then((response) => {
       if (response.data.message === "success") {
