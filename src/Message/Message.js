@@ -11,7 +11,7 @@ export default function Message() {
   const [totalPage, setTotalPage] = useState(0);
 
   const deleteMessage = (message_id) => {
-    Axios.post("https://luanvan-server.herokuapp.com/admin/message/delete-message", {
+    Axios.post("https://luanvan-server-1.herokuapp.com/admin/message/delete-message", {
       message_id,
     }).then((res) => {
       getMessages();
@@ -19,7 +19,7 @@ export default function Message() {
   };
 
   const getTotalMessage = () => {
-    Axios.get("https://luanvan-server.herokuapp.com/admin/message/get-total-messages").then(
+    Axios.get("https://luanvan-server-1.herokuapp.com/admin/message/get-total-messages").then(
       (res) => {
         setTotalPage(Math.ceil(res.data[0].totalMessage / 5));
       }
@@ -27,7 +27,7 @@ export default function Message() {
   };
 
   const getMessages = () => {
-    Axios.get("https://luanvan-server.herokuapp.com/admin/message/get-messages").then(
+    Axios.get("https://luanvan-server-1.herokuapp.com/admin/message/get-messages").then(
       (res) => {
         setMessages(res.data);
       }
